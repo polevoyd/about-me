@@ -1,6 +1,6 @@
 # About Me
 
-A simplistic website that meant to be a interactive resume.
+A simplistic website that meant to be a interactive online resume.
 
 ## Built With
 
