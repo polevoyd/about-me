@@ -11,7 +11,7 @@ A simplistic website that meant to be a interactive resume.
 
 ## Authors
 
-* **Dmitry**(https://github.com/polevoyd)
+* **Dmitry** (https://github.com/polevoyd)
 
 
 ## License
