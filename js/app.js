@@ -5,6 +5,8 @@ var guessActive = prompt('Do I like to be active? y/n');
 if (guessActive.toLowerCase() === 'n'){
     alert('You are wrong!');
 } else if (guessActive.toLowerCase() === 'y'){
+    // 
+    
     document.getElementsByTagName('h1')[0].style.fontStyle = 'italic';
     document.getElementsByTagName('h2')[0].style.fontStyle = 'italic';
     alert('Yes! I actually do!');
