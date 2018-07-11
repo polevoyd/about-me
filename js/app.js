@@ -27,9 +27,10 @@ var guessColors = prompt('Do I like to change background colors? y/n');
 if (guessColors.toLowerCase() === 'n'){
     alert('You are wrong!');
 } else if (guessColors.toLowerCase() === 'y'){
-    document.body.style.background = 'black';
-    document.getElementsByTagName('h1')[0].style.color = 'white';
-    document.getElementsByTagName('h1')[1].style.color = 'white';
+    document.body.style.background = '#F3E1DD';
+    document.getElementsByTagName('h1')[0].style.color = '#CE796B';
+    document.getElementsByTagName('h1')[1].style.color = '#CE796B';
+    // document.getElementsByTagName('h1')[0].style.textShadow = '#F3E1DD';
     alert('Yes! I actually do!');
 }else{
     alert('Wrong input! Only y/n allowed');
