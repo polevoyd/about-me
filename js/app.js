@@ -6,7 +6,7 @@ if (guessActive.toLowerCase() === 'n'){
     alert('You are wrong!');
 } else if (guessActive.toLowerCase() === 'y'){
     document.getElementsByTagName('h1')[0].style.fontStyle = 'italic';
-    document.getElementsByTagName('h1')[1].style.fontStyle = 'italic';
+    document.getElementsByTagName('h2')[0].style.fontStyle = 'italic';
     alert('Yes! I actually do!');
 } else{
     alert('Wrong input! Only y/n allowed');
@@ -29,7 +29,7 @@ if (guessColors.toLowerCase() === 'n'){
 } else if (guessColors.toLowerCase() === 'y'){
     document.body.style.background = '#F3E1DD';
     document.getElementsByTagName('h1')[0].style.color = '#CE796B';
-    document.getElementsByTagName('h1')[1].style.color = '#CE796B';
+    document.getElementsByTagName('h2')[0].style.color = '#CE796B';
     // document.getElementsByTagName('h1')[0].style.textShadow = '#F3E1DD';
     alert('Yes! I actually do!');
 }else{

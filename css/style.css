@@ -3,6 +3,14 @@ h1 {
     letter-spacing: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+    /* to place text in a center of screen */
+    left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 30%;
+    width: 100%;
 
     color: #F3E1DD;
     text-shadow: -10px 20px #CE796B;
@@ -14,6 +22,29 @@ h1 {
     margin-right: auto;
 }
 
+h2 {
+    font-size: 10em; 
+    letter-spacing: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    /* to place text in a center of screen */
+    left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    color: #F3E1DD;
+    text-shadow: -10px 20px #CE796B;
+
+    margin: -10px auto -10px auto;
+    /* justify-content: center; */
+    /* align-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
 body {
     background-color: #2B3A67;
     
