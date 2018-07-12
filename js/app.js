@@ -110,44 +110,45 @@ question5();
 // number will be random from 0 to 30
 var correctNumber = Math.floor(Math.random() * 30);
 var attempts = 4;
+function question6() {
+    while (attempts !== 0){
 
-while (attempts !== 0){
+        var guessNumber = prompt('Let\'s get serious. Guess a number from 1 to 50:');
+        console.log('User input: ' + guessNumber);
 
-    var guessNumber = prompt('Let\'s get serious. Guess a number from 1 to 50:');
-    console.log('User input: ' + guessNumber);
+        if (parseInt(guessNumber)){
+            if (parseInt(guessNumber) === correctNumber){
 
-    if (parseInt(guessNumber)){
-        if (parseInt(guessNumber) === correctNumber){
-
-            console.log("True!");
-            alert('Great job! You guess it with ' + (5 - attempts) + ' attempt(s)');
-            correctAns++;
-            break;
-        } 
-        else if (parseInt(guessNumber) < correctNumber){
-    
-            console.log(parseInt(guessNumber) + ' lower than ' + correctNumber);
-            attempts--;
-            alert("Wrong...Go higher!" + attempts + " attempts left");
-            
-        } 
-        else if (parseInt(guessNumber) > correctNumber){
-    
-            console.log(parseInt(guessNumber) + ' bigger that ' + correctNumber);
-            attempts--; 
-            alert("Wrong...Go lower!" + attempts + " attempts left");
+                console.log("True!");
+                alert('Great job! You guess it with ' + (5 - attempts) + ' attempt(s)');
+                correctAns++;
+                break;
+            } 
+            else if (parseInt(guessNumber) < correctNumber){
+        
+                console.log(parseInt(guessNumber) + ' lower than ' + correctNumber);
+                attempts--;
+                alert("Wrong...Go higher!" + attempts + " attempts left");
+                
+            } 
+            else if (parseInt(guessNumber) > correctNumber){
+        
+                console.log(parseInt(guessNumber) + ' bigger that ' + correctNumber);
+                attempts--; 
+                alert("Wrong...Go lower!" + attempts + " attempts left");
+                
+            }
             
         }
-        
+        else alert('Wrong input! It should be a whole number');
     }
-    else alert('Wrong input! It should be a whole number');
+
+    if ((attempts === 0) && (guessNumber !== correctNumber)){
+
+        alert('You wasted all your attempts...');
+    }
 }
-
-if ((attempts === 0) && (guessNumber !== correctNumber)){
-
-    alert('You wasted all your attempts...');
-}
-
+question6();
 /*---------------------------------------------------------*/
 // Question #7
 
