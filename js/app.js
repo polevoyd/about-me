@@ -29,21 +29,22 @@ question1();
 
 /*---------------------------------------------------------*/
 // Question #3
-var guessGames = prompt('Do I play a video games? y/n');
-console.log('User input: ' + guessGames);
+function question2() {
+    var guessGames = prompt('Do I play a video games? y/n');
+    console.log('User input: ' + guessGames);
 
-if ((guessGames.toLowerCase() === 'n') || (guessGames.toLowerCase() === 'no')){
+    if ((guessGames.toLowerCase() === 'n') || (guessGames.toLowerCase() === 'no')){
 
-    alert('That\'s right, I do like them but doesn\'t play that often!');
-    correctAns++;
+        alert('That\'s right, I do like them but doesn\'t play that often!');
+        correctAns++;
 
-} else if ((guessGames.toLowerCase() === 'y') || (guessGames.toLowerCase() === 'yes')){
+    } else if ((guessGames.toLowerCase() === 'y') || (guessGames.toLowerCase() === 'yes')){
 
-    alert('You are wrong!');
+        alert('You are wrong!');
 
-}else alert('Wrong input! Only y/n allowed');
-
-
+    }else alert('Wrong input! Only y/n allowed');
+}
+question2();
 
 /*---------------------------------------------------------*/
 // Question #3
