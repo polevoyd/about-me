@@ -1,128 +1,47 @@
 'use strict';
 
-var wrongInputAlrt = 'Wrong input! Only y/n allowed';
+/*---------------------------------------------------------*/
+/*-------------------Global variables----------------------*/
+/*---------------------------------------------------------*/
+var wrongInputAlrt = 'Wrong input! Only y/n or yes/no allowed';
+var answerYes = 'y' || 'yes';
+var answerNo = 'n' || 'no';
+var totalScore = 0;
 
 /*---------------------------------------------------------*/
-// amount of correct answers
-var correctAns = 0;
-
+/*------------------Answers validators---------------------*/
 /*---------------------------------------------------------*/
-// Question #3
-function question1() {
-    var guessActive = prompt('Do I like to be active? y/n');
-    console.log('User input: ' + guessActive);
+// "Yes" or "No"
+function checkAnswerYN(userAnswer, correctAnswer){
 
-    if ((guessActive.toLowerCase() === 'n') || (guessActive.toLowerCase() === 'no')) {
-
-        alert('You are wrong!');
-
-    } else if ((guessActive.toLowerCase() === 'y') || (guessActive.toLowerCase() === 'yes')) {
-
-        alert('Yes! I actually do!');
-        correctAns++;
-
-    } else alert(wrongInputAlrt);
+    if (userAnswer.toLowerCase() !== answerYes && userAnswer.toLowerCase() !== answerNo){
+        alert(wrongInputAlrt);
+    }
+    else{
+        if (userAnswer.toLowerCase() === correctAnswer){
+            alert('Yes! That\'s correct answer!');
+            totalScore++;
+        } 
+        else if (userAnswer.toLowerCase() !== correctAnswer){
+            alert('No, you are wrong!');
+        }
+    }  
 }
 
-question1();
+// Guess number in a range
+function checkAnswerNumber(attempts, correctNumber){
 
-
-/*---------------------------------------------------------*/
-// Question #3
-function question2() {
-    var guessGames = prompt('Do I play a video games? y/n');
-    console.log('User input: ' + guessGames);
-
-    if ((guessGames.toLowerCase() === 'n') || (guessGames.toLowerCase() === 'no')){
-
-        alert('That\'s right, I do like them but doesn\'t play that often!');
-        correctAns++;
-
-    } else if ((guessGames.toLowerCase() === 'y') || (guessGames.toLowerCase() === 'yes')){
-
-        alert('You are wrong!');
-
-    }else alert('Wrong input! Only y/n allowed');
-}
-question2();
-
-/*---------------------------------------------------------*/
-// Question #3
-function question3() {
-    var guessColors = prompt('Do I like to change background colors? y/n');
-    console.log('User input: ' + guessColors);
-
-    if ((guessColors.toLowerCase() === 'n') || (guessColors.toLowerCase() === 'no')){
-
-        alert('You are wrong!');
-
-    } else if ((guessColors.toLowerCase() === 'y') || (guessColors.toLowerCase() === 'yes')){
-
-        alert('Yes! I actually do!');
-        correctAns++;
-
-    }else alert('Wrong input! Only y/n allowed');
-}
-question3();
-
-/*---------------------------------------------------------*/
-// Question #3
-function question4() {
-    var guessLang = prompt('Does english in my native language? y/n');
-    console.log('User input: ' + guessLang);
-
-    if ((guessLang.toLowerCase() === 'n') || (guessLang.toLowerCase() === 'no')){
-
-        document.getElementsByTagName('h1')[0].textContent = 'DMITЯY';
-        alert('You are right!');
-        correctAns++;
-
-    } else if ((guessLang.toLowerCase() === 'y') || (guessLang.toLowerCase() === 'yes')){
-
-        alert('You are wrong!');
-
-    }else alert('Wrong input! Only y/n allowed');
-}
-question4();
-
-/*---------------------------------------------------------*/
-// Question #3
-function question5() {
-    var guessAnimals = prompt('Do I like animals? y/n');
-    console.log('User input: ' + guessAnimals);
-
-    if ((guessAnimals.toLowerCase() === 'n') || (guessAnimals.toLowerCase() === 'no')){
-
-        alert('You are wrong!');
-
-    } else if ((guessAnimals.toLowerCase() === 'y') || (guessAnimals.toLowerCase() === 'yes')){
-
-        alert('Yes, I do!');
-        correctAns++;
-
-    }else alert('Wrong input! Only y/n allowed');
-}
-question5();
-
-/*---------------------------------------------------------*/
-// Question #6
-
-// number will be random from 0 to 30
-
-function question6() {
-    var correctNumber = Math.floor(Math.random() * 30);
-    var attempts = 4;
     while (attempts !== 0){
 
-        var guessNumber = prompt('Let\'s get serious. Guess a number from 1 to 50:');
+        var guessNumber = prompt('Let\'s get serious. \nGuess a number from 1 to 27: ');
         console.log('User input: ' + guessNumber);
-
+        
         if (parseInt(guessNumber)){
             if (parseInt(guessNumber) === correctNumber){
-
+    
                 console.log("True!");
                 alert('Great job! You guess it with ' + (5 - attempts) + ' attempt(s)');
-                correctAns++;
+                totalScore++;
                 break;
             } 
             else if (parseInt(guessNumber) < correctNumber){
@@ -137,66 +56,111 @@ function question6() {
                 console.log(parseInt(guessNumber) + ' bigger that ' + correctNumber);
                 attempts--; 
                 alert("Wrong...Go lower!" + attempts + " attempts left");
-                
             }
-            
         }
-        else alert('Wrong input! It should be a whole number');
+        else {
+            alert('Wrong input! It should be a whole number\n' + attempts + ' attempts left');
+            attempts--;
+        }
     }
-
+    
     if ((attempts === 0) && (guessNumber !== correctNumber)){
-
+    
         alert('You wasted all your attempts...');
     }
 }
-question6();
-/*---------------------------------------------------------*/
-// Question #7
-function question7() {
-    var citiesVisited = ['Moscow', 'Las Vegas', 'Rostov-On-Don', 'Vancouver', 'Seattle', 'Portland', 'Los Angeles'];
-    var correctCityArr = [];
 
-    for (var citiesAttempts = 5; citiesAttempts >= 0; citiesAttempts--) 
+// Guess from array of elements
+function checkAnswerArray(attempts, citiesVisited)
     {
-        var cityGuess = prompt('Guess a city I\'ve been to: ');
-        var boolCorrect = false;
-        console.log('User input: ' + cityGuess);
+        var correctCityArr = [];
 
-        for (var k = 0; k < citiesVisited.length; k++){
+        for (var citiesAttempts = attempts; citiesAttempts >= 0; citiesAttempts--) 
+        {
+            var cityGuess = prompt('Guess a city I\'ve been to: ');
+            var boolCorrect = false;
+            console.log('User input: ' + cityGuess);
 
-            if (cityGuess === citiesVisited[k]){ // oh, its in array!
+            for (var k = 0; k < citiesVisited.length; k++){
 
-                boolCorrect = true;
-                break;
+                if (cityGuess === citiesVisited[k]){
+
+                    boolCorrect = true;
+                    break;
+                }
+            }
+
+            if (boolCorrect){
+                correctCityArr.push(cityGuess);
+                alert('That\'s right! You have ' + citiesAttempts + ' attempts left');
+            }
+            else{
+                alert('That\'s wrong! You have ' + citiesAttempts + ' attempts left');
             }
         }
 
-        if (boolCorrect){
-            correctCityArr.push(cityGuess);
-            alert('That\'s right! You have ' + citiesAttempts + ' attempts left');
+        // checking which cities guess correctly (if any)
+        if (correctCityArr.length !== 0){
+            alert('Done! Here is a cities you guessed: ' + correctCityArr);
         }
         else{
-            alert('That\'s wrong! You have ' + citiesAttempts + ' attempts left');
+            alert('Done! You didn\'t guessed any...');
         }
     }
 
-    // checking which cities guess correctly (if any)
-    if (correctCityArr.length !== 0){
-        alert('Done! Here is a cities you guessed: ' + correctCityArr);
-    }
-    else{
-        alert('Done! You didn\'t guessed any...');
-    }
-}
-question7();
-// checking total score
-if (correctAns > 4){
-    alert('Your total score is: ' + correctAns + '/7. Not bad ;)');
+/*---------------------------------------------------------*/
+/*-----------------Questions section-----------------------*/
+/*---------------------------------------------------------*/
+// Question #1
+
+    var questionOneAnswer = prompt('Do I like to be active? y/n');
+    console.log('User input: ' + questionOneAnswer);
+    checkAnswerYN(questionOneAnswer, answerYes);
+
+// Question #2
+
+     var questionTwoAnswer = prompt('Do I play a video games? y/n');
+     console.log('User input: ' + questionTwoAnswer);
+     checkAnswerYN(questionTwoAnswer, answerNo);
+
+// Question #3
+
+    var questionThreeAnswer = prompt('Do I like to change background colors? y/n');
+    console.log('User input: ' + questionThreeAnswer);
+    checkAnswerYN(questionThreeAnswer, answerYes);
+
+// Question #4
+
+    var questionFourAnswer = prompt('Does english in my native language? y/n');
+    console.log('User input: ' + questionFourAnswer);
+    checkAnswerYN(questionFourAnswer, answerNo);
+
+// Question #5
+
+    var questionFiveAnswer = prompt('Do I like animals? y/n');
+    console.log('User input: ' + questionFiveAnswer);
+    checkAnswerYN(questionFiveAnswer, answerYes);
+
+// Question #6
+
+var randomNum = Math.floor(Math.random() * 27);
+checkAnswerNumber(4, randomNum);
+
+// Question #7
+
+    var citiesVisited = ['Moscow', 'Las Vegas', 'Rostov-On-Don', 'Vancouver', 'Seattle', 'Portland', 'Los Angeles'];
+    checkAnswerArray(5, citiesVisited);
+
+/*---------------------------------------------------------*/
+/*---------------------Total score-------------------------*/
+/*---------------------------------------------------------*/
+
+if (totalScore > 4){
+    alert('Your total score is: ' + totalScore + '/7. Not bad ;)');
 }
 else{
-    alert('Your total score is: ' + correctAns + '/7. You didn\'t try hard enough...');
+    alert('Your total score is: ' + totalScore + '/7. You didn\'t try hard enough...');
 }
-
 
 /*---------------------------------------------------------*/
 // way to access element on page:
