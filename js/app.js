@@ -108,9 +108,10 @@ question5();
 // Question #6
 
 // number will be random from 0 to 30
-var correctNumber = Math.floor(Math.random() * 30);
-var attempts = 4;
+
 function question6() {
+    var correctNumber = Math.floor(Math.random() * 30);
+    var attempts = 4;
     while (attempts !== 0){
 
         var guessNumber = prompt('Let\'s get serious. Guess a number from 1 to 50:');
@@ -151,42 +152,43 @@ function question6() {
 question6();
 /*---------------------------------------------------------*/
 // Question #7
+function question7() {
+    var citiesVisited = ['Moscow', 'Las Vegas', 'Rostov-On-Don', 'Vancouver', 'Seattle', 'Portland', 'Los Angeles'];
+    var correctCityArr = [];
 
-var citiesVisited = ['Moscow', 'Las Vegas', 'Rostov-On-Don', 'Vancouver', 'Seattle', 'Portland', 'Los Angeles'];
-var correctCityArr = [];
+    for (var citiesAttempts = 5; citiesAttempts >= 0; citiesAttempts--) 
+    {
+        var cityGuess = prompt('Guess a city I\'ve been to: ');
+        var boolCorrect = false;
+        console.log('User input: ' + cityGuess);
 
-for (var citiesAttempts = 5; citiesAttempts >= 0; citiesAttempts--) 
-{
-    var cityGuess = prompt('Guess a city I\'ve been to: ');
-    var boolCorrect = false;
-    console.log('User input: ' + cityGuess);
+        for (var k = 0; k < citiesVisited.length; k++){
 
-    for (var k = 0; k < citiesVisited.length; k++){
+            if (cityGuess === citiesVisited[k]){ // oh, its in array!
 
-        if (cityGuess === citiesVisited[k]){ // oh, its in array!
+                boolCorrect = true;
+                break;
+            }
+        }
 
-            boolCorrect = true;
-            break;
+        if (boolCorrect){
+            correctCityArr.push(cityGuess);
+            alert('That\'s right! You have ' + citiesAttempts + ' attempts left');
+        }
+        else{
+            alert('That\'s wrong! You have ' + citiesAttempts + ' attempts left');
         }
     }
 
-    if (boolCorrect){
-        correctCityArr.push(cityGuess);
-        alert('That\'s right! You have ' + citiesAttempts + ' attempts left');
+    // checking which cities guess correctly (if any)
+    if (correctCityArr.length !== 0){
+        alert('Done! Here is a cities you guessed: ' + correctCityArr);
     }
     else{
-        alert('That\'s wrong! You have ' + citiesAttempts + ' attempts left');
+        alert('Done! You didn\'t guessed any...');
     }
 }
-
-// checking which cities guess correctly (if any)
-if (correctCityArr.length !== 0){
-    alert('Done! Here is a cities you guessed: ' + correctCityArr);
-}
-else{
-    alert('Done! You didn\'t guessed any...');
-}
-
+question7();
 // checking total score
 if (correctAns > 4){
     alert('Your total score is: ' + correctAns + '/7. Not bad ;)');
