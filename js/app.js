@@ -48,58 +48,61 @@ question2();
 
 /*---------------------------------------------------------*/
 // Question #3
-var guessColors = prompt('Do I like to change background colors? y/n');
-console.log('User input: ' + guessColors);
+function question3() {
+    var guessColors = prompt('Do I like to change background colors? y/n');
+    console.log('User input: ' + guessColors);
 
-if ((guessColors.toLowerCase() === 'n') || (guessColors.toLowerCase() === 'no')){
+    if ((guessColors.toLowerCase() === 'n') || (guessColors.toLowerCase() === 'no')){
 
-    alert('You are wrong!');
+        alert('You are wrong!');
 
-} else if ((guessColors.toLowerCase() === 'y') || (guessColors.toLowerCase() === 'yes')){
+    } else if ((guessColors.toLowerCase() === 'y') || (guessColors.toLowerCase() === 'yes')){
 
-    alert('Yes! I actually do!');
-    correctAns++;
+        alert('Yes! I actually do!');
+        correctAns++;
 
-}else alert('Wrong input! Only y/n allowed');
-
-
-
-/*---------------------------------------------------------*/
-// Question #3
-var guessLang = prompt('Does english in my native language? y/n');
-console.log('User input: ' + guessLang);
-
-if ((guessLang.toLowerCase() === 'n') || (guessLang.toLowerCase() === 'no')){
-
-    document.getElementsByTagName('h1')[0].textContent = 'DMITЯY';
-    alert('You are right!');
-    correctAns++;
-
-} else if ((guessLang.toLowerCase() === 'y') || (guessLang.toLowerCase() === 'yes')){
-
-    alert('You are wrong!');
-
-}else alert('Wrong input! Only y/n allowed');
-
-
+    }else alert('Wrong input! Only y/n allowed');
+}
+question3();
 
 /*---------------------------------------------------------*/
 // Question #3
-var guessAnimals = prompt('Do I like animals? y/n');
-console.log('User input: ' + guessAnimals);
+function question4() {
+    var guessLang = prompt('Does english in my native language? y/n');
+    console.log('User input: ' + guessLang);
 
-if ((guessAnimals.toLowerCase() === 'n') || (guessAnimals.toLowerCase() === 'no')){
+    if ((guessLang.toLowerCase() === 'n') || (guessLang.toLowerCase() === 'no')){
 
-    alert('You are wrong!');
+        document.getElementsByTagName('h1')[0].textContent = 'DMITЯY';
+        alert('You are right!');
+        correctAns++;
 
-} else if ((guessAnimals.toLowerCase() === 'y') || (guessAnimals.toLowerCase() === 'yes')){
+    } else if ((guessLang.toLowerCase() === 'y') || (guessLang.toLowerCase() === 'yes')){
 
-    alert('Yes, I do!');
-    correctAns++;
+        alert('You are wrong!');
 
-}else alert('Wrong input! Only y/n allowed');
+    }else alert('Wrong input! Only y/n allowed');
+}
+question4();
 
+/*---------------------------------------------------------*/
+// Question #3
+function question5() {
+    var guessAnimals = prompt('Do I like animals? y/n');
+    console.log('User input: ' + guessAnimals);
 
+    if ((guessAnimals.toLowerCase() === 'n') || (guessAnimals.toLowerCase() === 'no')){
+
+        alert('You are wrong!');
+
+    } else if ((guessAnimals.toLowerCase() === 'y') || (guessAnimals.toLowerCase() === 'yes')){
+
+        alert('Yes, I do!');
+        correctAns++;
+
+    }else alert('Wrong input! Only y/n allowed');
+}
+question5();
 
 /*---------------------------------------------------------*/
 // Question #6
