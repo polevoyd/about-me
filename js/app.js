@@ -8,20 +8,23 @@ var correctAns = 0;
 
 /*---------------------------------------------------------*/
 // Question #3
-var guessActive = prompt('Do I like to be active? y/n');
-console.log('User input: ' + guessActive);
+function question1() {
+    var guessActive = prompt('Do I like to be active? y/n');
+    console.log('User input: ' + guessActive);
 
-if ((guessActive.toLowerCase() === 'n') || (guessActive.toLowerCase() === 'no')){
+    if ((guessActive.toLowerCase() === 'n') || (guessActive.toLowerCase() === 'no')) {
 
-    alert('You are wrong!');
+        alert('You are wrong!');
 
-} else if ((guessActive.toLowerCase() === 'y')|| (guessActive.toLowerCase() === 'yes')){
+    } else if ((guessActive.toLowerCase() === 'y') || (guessActive.toLowerCase() === 'yes')) {
 
-    alert('Yes! I actually do!');
-    correctAns++;
+        alert('Yes! I actually do!');
+        correctAns++;
 
-} else alert(wrongInputAlrt);
+    } else alert(wrongInputAlrt);
+}
 
+question1();
 
 
 /*---------------------------------------------------------*/
