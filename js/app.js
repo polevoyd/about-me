@@ -9,12 +9,13 @@ var correctAns = 0;
 /*---------------------------------------------------------*/
 // Question #3
 var guessActive = prompt('Do I like to be active? y/n');
+console.log('User input: ' + guessActive);
 
-if (guessActive.toLowerCase() === 'n'){
+if ((guessActive.toLowerCase() === 'n') || (guessActive.toLowerCase() === 'no')){
 
     alert('You are wrong!');
 
-} else if (guessActive.toLowerCase() === 'y'){
+} else if ((guessActive.toLowerCase() === 'y')|| (guessActive.toLowerCase() === 'yes')){
 
     alert('Yes! I actually do!');
     correctAns++;
@@ -26,13 +27,14 @@ if (guessActive.toLowerCase() === 'n'){
 /*---------------------------------------------------------*/
 // Question #3
 var guessGames = prompt('Do I play a video games? y/n');
+console.log('User input: ' + guessGames);
 
-if (guessGames.toLowerCase() === 'n'){
+if ((guessGames.toLowerCase() === 'n') || (guessGames.toLowerCase() === 'no')){
 
     alert('That\'s right, I do like them but doesn\'t play that often!');
     correctAns++;
 
-} else if (guessGames.toLowerCase() === 'y'){
+} else if ((guessGames.toLowerCase() === 'y') || (guessGames.toLowerCase() === 'yes')){
 
     alert('You are wrong!');
 
@@ -43,11 +45,13 @@ if (guessGames.toLowerCase() === 'n'){
 /*---------------------------------------------------------*/
 // Question #3
 var guessColors = prompt('Do I like to change background colors? y/n');
-if (guessColors.toLowerCase() === 'n'){
+console.log('User input: ' + guessColors);
+
+if ((guessColors.toLowerCase() === 'n') || (guessColors.toLowerCase() === 'no')){
 
     alert('You are wrong!');
 
-} else if (guessColors.toLowerCase() === 'y'){
+} else if ((guessColors.toLowerCase() === 'y') || (guessColors.toLowerCase() === 'yes')){
 
     alert('Yes! I actually do!');
     correctAns++;
@@ -59,15 +63,15 @@ if (guessColors.toLowerCase() === 'n'){
 /*---------------------------------------------------------*/
 // Question #3
 var guessLang = prompt('Does english in my native language? y/n');
+console.log('User input: ' + guessLang);
 
-if (guessLang.toLowerCase() === 'n'){
+if ((guessLang.toLowerCase() === 'n') || (guessLang.toLowerCase() === 'no')){
 
     document.getElementsByTagName('h1')[0].textContent = 'DMITЯY';
-
     alert('You are right!');
     correctAns++;
 
-} else if (guessLang.toLowerCase() === 'y'){
+} else if ((guessLang.toLowerCase() === 'y') || (guessLang.toLowerCase() === 'yes')){
 
     alert('You are wrong!');
 
@@ -78,12 +82,13 @@ if (guessLang.toLowerCase() === 'n'){
 /*---------------------------------------------------------*/
 // Question #3
 var guessAnimals = prompt('Do I like animals? y/n');
+console.log('User input: ' + guessAnimals);
 
-if (guessAnimals.toLowerCase() === 'n'){
+if ((guessAnimals.toLowerCase() === 'n') || (guessAnimals.toLowerCase() === 'no')){
 
     alert('You are wrong!');
 
-} else if (guessAnimals.toLowerCase() === 'y'){
+} else if ((guessAnimals.toLowerCase() === 'y') || (guessAnimals.toLowerCase() === 'yes')){
 
     alert('Yes, I do!');
     correctAns++;
@@ -102,6 +107,7 @@ var attempts = 4;
 while (attempts !== 0){
 
     var guessNumber = prompt('Let\'s get serious. Guess a number from 1 to 50:');
+    console.log('User input: ' + guessNumber);
 
     if (parseInt(guessNumber)){
         if (parseInt(guessNumber) === correctNumber){
@@ -145,6 +151,7 @@ for (var citiesAttempts = 5; citiesAttempts >= 0; citiesAttempts--)
 {
     var cityGuess = prompt('Guess a city I\'ve been to: ');
     var boolCorrect = false;
+    console.log('User input: ' + cityGuess);
 
     for (var k = 0; k < citiesVisited.length; k++){
 
