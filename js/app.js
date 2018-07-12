@@ -143,8 +143,8 @@ function checkAnswerArray(attempts, citiesVisited)
 
 // Question #6
 
-var randomNum = Math.floor(Math.random() * 27);
-checkAnswerNumber(4, randomNum);
+    var randomNum = Math.floor(Math.random() * 27);
+    checkAnswerNumber(4, randomNum);
 
 // Question #7
 
