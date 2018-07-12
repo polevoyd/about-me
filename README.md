@@ -13,6 +13,9 @@ A simplistic website that meant to be a interactive online resume.
 
 * **Dmitry** (https://github.com/polevoyd)
 
+## Contributors
+
+* **Diego** (https://github.com/diego-ramos130)
 
 ## License
 
