@@ -179,20 +179,6 @@ else{
 }
 
 
-
-
-
-
 /*---------------------------------------------------------*/
 // way to access element on page:
 // document.getElementsByTagName('h1')[0].style.fontStyle = 'italic';
-
-
-/*
-LAB#3 tasks: 
-use unordered list
-use ordered list
-
-
-
-*/
