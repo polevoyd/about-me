@@ -11,11 +11,11 @@ A simplistic website that meant to be a interactive online resume.
 
 ## Authors
 
-* **Dmitry** (https://github.com/polevoyd)
+* **Dmitry** (https://github.com/polevoyd) (Navigator)
 
 ## Contributors
 
-* **Diego** (https://github.com/diego-ramos130)
+* **Diego** (https://github.com/diego-ramos130) (Driver)
 
 ## License
 
