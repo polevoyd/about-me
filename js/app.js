@@ -77,7 +77,7 @@ function checkAnswerArray(attempts, citiesVisited)
 
         for (var citiesAttempts = attempts; citiesAttempts >= 0; citiesAttempts--) 
         {
-            var cityGuess = prompt('Guess a city I\'ve been to: ');
+            var cityGuess = prompt('Guess what cities I\'ve been to, as many as possible: ').toUpperCase();
             var boolCorrect = false;
             console.log('User input: ' + cityGuess);
 
@@ -113,31 +113,31 @@ function checkAnswerArray(attempts, citiesVisited)
 /*---------------------------------------------------------*/
 // Question #1
 
-    var questionOneAnswer = prompt('Do I like to be active? y/n');
+    var questionOneAnswer = prompt('Do I like to be active? y/n, yes/no');
     console.log('User input: ' + questionOneAnswer);
     checkAnswerYN(questionOneAnswer, answerYes);
 
 // Question #2
 
-     var questionTwoAnswer = prompt('Do I play a video games? y/n');
+     var questionTwoAnswer = prompt('Do I play a video games? y/n, yes/no');
      console.log('User input: ' + questionTwoAnswer);
      checkAnswerYN(questionTwoAnswer, answerNo);
 
 // Question #3
 
-    var questionThreeAnswer = prompt('Do I like to change background colors? y/n');
+    var questionThreeAnswer = prompt('Do I like to change background colors? y/n, yes/no');
     console.log('User input: ' + questionThreeAnswer);
     checkAnswerYN(questionThreeAnswer, answerYes);
 
 // Question #4
 
-    var questionFourAnswer = prompt('Does english in my native language? y/n');
+    var questionFourAnswer = prompt('Does english in my native language? y/n, yes/no');
     console.log('User input: ' + questionFourAnswer);
     checkAnswerYN(questionFourAnswer, answerNo);
 
 // Question #5
 
-    var questionFiveAnswer = prompt('Do I like animals? y/n');
+    var questionFiveAnswer = prompt('Do I like animals? y/n, yes/no');
     console.log('User input: ' + questionFiveAnswer);
     checkAnswerYN(questionFiveAnswer, answerYes);
 
@@ -148,7 +148,7 @@ function checkAnswerArray(attempts, citiesVisited)
 
 // Question #7
 
-    var citiesVisited = ['Moscow', 'Las Vegas', 'Rostov-On-Don', 'Vancouver', 'Seattle', 'Portland', 'Los Angeles'];
+    var citiesVisited = ['MOSCOW', 'LAS VEGAS', 'VANCOUVER', 'SEATTLE', 'PORTLAND', 'LOS ANGELES'];
     checkAnswerArray(5, citiesVisited);
 
 /*---------------------------------------------------------*/
