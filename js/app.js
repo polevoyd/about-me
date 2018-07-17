@@ -4,8 +4,8 @@
 /*-------------------Global variables----------------------*/
 /*---------------------------------------------------------*/
 var wrongInputAlrt = 'Wrong input! Only y/n or yes/no allowed';
-var answerYes = 'y' || 'yes';
-var answerNo = 'n' || 'no';
+var answerYes = 'y' && 'yes';
+var answerNo = 'n' && 'no';
 var totalScore = 0;
 
 /*---------------------------------------------------------*/
