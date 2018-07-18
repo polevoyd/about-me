@@ -4,8 +4,8 @@
 /*-------------------Global variables----------------------*/
 /*---------------------------------------------------------*/
 var wrongInputAlrt = 'Wrong input! Only y/n or yes/no allowed';
-var answerYes = 'y' && 'yes';
-var answerNo = 'n' && 'no';
+var answerYes = ['y', 'yes', 'YES', 'Y'];
+var answerNo = ['n', 'no', 'NO', 'N'];
 var totalScore = 0;
 
 /*---------------------------------------------------------*/
@@ -14,15 +14,15 @@ var totalScore = 0;
 // "Yes" or "No"
 function checkAnswerYN(userAnswer, correctAnswer){
 
-    if (userAnswer.toLowerCase() !== answerYes && userAnswer.toLowerCase() !== answerNo){
+    if (!answerYes.includes(userAnswer) && !answerNo.includes(userAnswer)){
         alert(wrongInputAlrt);
     }
     else{
-        if (userAnswer.toLowerCase() === correctAnswer){
+        if (correctAnswer.includes(userAnswer)){
             alert('Yes! That\'s correct answer!');
             totalScore++;
         } 
-        else if (userAnswer.toLowerCase() !== correctAnswer){
+        else{
             alert('No, you are wrong!');
         }
     }  
